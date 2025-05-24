@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3eogooj7apo8"]
+
+[ext_resource type="Texture2D" uid="uid://bjbkpgy1g46q5" path="res://UNDERTALE Organized Sprite Dump/Battle/UI/Attack/spr_target_0.png" id="1_xjrtx"]
+
+[node name="FightBattleMiniGame" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-112, 18)
+texture = ExtResource("1_xjrtx")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1aare3i3b4eh"]
+
+[ext_resource type="Script" uid="uid://qija6qbcsjlw" path="res://Soul/Soul - Red Script/red_soul.gd" id="1_ycnc0"]
+[ext_resource type="Texture2D" uid="uid://cgt6qail1rf5w" path="res://UNDERTALE Organized Sprite Dump/Battle/UI/Soul/spr_heart_battle_pl_0.png" id="2_au4u0"]
+[ext_resource type="Texture2D" uid="uid://c14vey62851wv" path="res://Soul/spr_heart_battle_pl_0_after im.png" id="3_au4u0"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nn8sp"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+
+[node name="Red Soul" type="CharacterBody2D"]
+script = ExtResource("1_ycnc0")
+IsBlue = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, 8, 2, 8, 2, 6, 4, 6, 4, 4, 6, 4, 6, 2, 8, 2, 8, -6, 7, -6, 7, -7, 6, -7, 6, -8, 4, -8, 4, -7, 2, -7, 2, -6, 1, -6, 1, -4, -1, -4, -1, -6, -2, -6, -2, -7, -4, -7, -4, -8, -6, -8, -6, -7, -7, -7, -7, -6, -8, -6, -8, 2, -6, 2, -6, 4, -4, 4, -4, 6, -2, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_au4u0")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite2D"]
+amount = 10
+texture = ExtResource("3_au4u0")
+lifetime = 0.35
+process_material = SubResource("ParticleProcessMaterial_nn8sp")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+polygon = PackedVector2Array(-2, 8, 2, 8, 2, 6, 4, 6, 4, 4, 6, 4, 6, 2, 8, 2, 8, -6, 7, -6, 7, -7, 6, -7, 6, -8, 4, -8, 4, -7, 2, -7, 2, -6, 1, -6, 1, -4, -1, -4, -1, -6, -2, -6, -2, -7, -4, -7, -4, -8, -6, -8, -6, -7, -7, -7, -7, -6, -8, -6, -8, 2, -6, 2, -6, 4, -4, 4, -4, 6, -2, 6)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.017
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

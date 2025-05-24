@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfo4nur5t2iyv"]
+
+[ext_resource type="Texture2D" uid="uid://dkhsrqh22c6cg" path="res://UNDERTALE Organized Sprite Dump/Battle/UI/spr_border_0.png" id="1_c4dro"]
+
+[node name="Box" type="Node2D"]
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(87, 0)
+scale = Vector2(22.8, 1)
+texture = ExtResource("1_c4dro")
+
+[node name="Area2D" type="Area2D" parent="Box"]
+position = Vector2(8.75, -0.426829)
+scale = Vector2(1.25, 0.691057)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(8.75, -0.426829)
+scale = Vector2(1.25, 0.691057)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(221.85, 0)
+scale = Vector2(22.75, 1)
+polygon = PackedVector2Array(-9, 4.23529, -9, 3.00512, -9, -3, -5, -3, -5, 4.23529)
