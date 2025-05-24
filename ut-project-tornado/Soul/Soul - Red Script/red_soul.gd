@@ -4,15 +4,12 @@ extends CharacterBody2D
 @export var IsBlue = false
 @export var IsParry = false
 @export var gravity = 10
-var BlueSoulJump = 200
+var BlueSoulJump = 300
 
 const terminal : float = 650.0
 
-@export var jumpTime = 0.5
+@export var jumpTime = 0.25
 var jumpRemaining = jumpTime
-
-#the github thing works
-
 var feet = true
 
 # Called when the node enters the scene tree for the first time.
@@ -55,8 +52,6 @@ func _physics_process(delta: float) -> void:
 			velocity.y = terminal
 
 	move_and_slide()
-
-#f
 
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
