@@ -11,12 +11,13 @@ const terminal : float = 650.0
 @export var jumpTime = 0.5
 var jumpRemaining = jumpTime
 
+#the github thing works
+
 var feet = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
 
 func get_input(delta):
 	var dir = Input.get_vector("Left", "Right", "Up", "Down")
@@ -33,11 +34,12 @@ func get_input(delta):
 			
 		if (Input.is_action_just_released("Up")):
 			feet = false
-	
+
 	if Input.is_action_pressed("SlowDown"):
-		if IsBlue == false:
+		if IsBlue:
+			velocity.x /= 2
+		else:
 			velocity = velocity /2
-		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
