@@ -3,13 +3,13 @@ extends CharacterBody2D
 @export var SoulSpeed = 200
 @export var IsBlue = false
 @export var IsParry = false
-@export var gravity = 10
+@export var gravity = 17
 var BlueSoulJump = 200
 
 
 const terminal : float = 650.0
 
-@export var jumpTime = 0.35
+@export var jumpTime = 0.3
 var jumpRemaining = jumpTime
 var feet = true
 
