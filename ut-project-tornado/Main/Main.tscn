@@ -8,7 +8,7 @@ position = Vector2(0, 2)
 
 [node name="Red Soul" parent="." instance=ExtResource("1_lxy7q")]
 position = Vector2(54, -32)
-gravity = 17
+gravity = 20
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

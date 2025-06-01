@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var SoulSpeed = 200
 @export var IsBlue = false
 @export var IsParry = false
-@export var gravity = 17
-var BlueSoulJump = 200
+@export var gravity = 20
+var BlueSoulJump = 250
 
 
 const terminal : float = 650.0
@@ -46,11 +46,11 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jumpRemaining = jumpTime
 		feet = true
-	if !Input.is_action_pressed("Up") || jumpRemaining <= 0:
-		if IsBlue:
-			velocity.y += gravity 
-			if velocity.y > terminal:
-				velocity.y = terminal
+		
+	if IsBlue:
+		velocity.y += gravity 
+		if velocity.y > terminal:
+			velocity.y = terminal
 
 	move_and_slide()
 
