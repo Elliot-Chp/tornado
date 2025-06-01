@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dfo4nur5t2iyv" path="res://Battle Box/Box_2d.tscn" id="2_83ytx"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(0, 2)
 
 [node name="Red Soul" parent="." instance=ExtResource("1_lxy7q")]
 position = Vector2(54, -32)
