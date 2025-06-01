@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var gravity = 20
 var BlueSoulJump = 250
 
+@export var stats : Node
 
 const terminal : float = 650.0
 
@@ -15,6 +16,7 @@ var feet = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SoulSpeed = stats.PlayerSoulSpeed
 	pass # Replace with function body.
 
 func get_input(delta):

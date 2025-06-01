@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx01m85sbcav4"]
+[gd_scene load_steps=4 format=3 uid="uid://dx01m85sbcav4"]
 
 [ext_resource type="PackedScene" uid="uid://b1aare3i3b4eh" path="res://Soul/red_soul.tscn" id="1_lxy7q"]
 [ext_resource type="PackedScene" uid="uid://dfo4nur5t2iyv" path="res://Battle Box/Box_2d.tscn" id="2_83ytx"]
+[ext_resource type="PackedScene" uid="uid://rjq5hrgi5v3n" path="res://entity_stats.tscn" id="3_amygn"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 2)
 
-[node name="Red Soul" parent="." instance=ExtResource("1_lxy7q")]
+[node name="Red Soul" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("1_lxy7q")]
 position = Vector2(2, 0)
 gravity = 20
+stats = NodePath("../EntityStats/Player/Player Stats")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -29,3 +31,7 @@ rotation = -1.55509
 
 [node name="Box5" parent="." instance=ExtResource("2_83ytx")]
 position = Vector2(2, 7)
+
+[node name="EntityStats" parent="." instance=ExtResource("3_amygn")]
+
+[editable path="EntityStats"]

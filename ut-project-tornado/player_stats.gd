@@ -11,6 +11,8 @@ var PlayerAT = 10
 
 var PlayerDF = 10
 
+@export var PlayerSoulSpeed = 200
+
 # 30 for 30 fps i think
 var PlayerINV = 60 
 
