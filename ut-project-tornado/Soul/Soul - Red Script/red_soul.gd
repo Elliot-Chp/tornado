@@ -4,12 +4,12 @@ extends CharacterBody2D
 @export var IsBlue = false
 @export var IsParry = false
 @export var gravity = 10
-var BlueSoulJump = 300
+var BlueSoulJump = 200
 
 
 const terminal : float = 650.0
 
-@export var jumpTime = 0.25
+@export var jumpTime = 0.35
 var jumpRemaining = jumpTime
 var feet = true
 
@@ -27,23 +27,17 @@ func get_input(delta):
 		velocity.x = BlueSoulDir * SoulSpeed
 		if (Input.is_action_pressed("Up")) and jumpRemaining > 0 and feet:
 			velocity.y = -BlueSoulJump
-			jumpRemaining -= delta * 2
+			jumpRemaining -= delta
 			print(jumpRemaining)
-			
-		if (Input.is_action_just_released("Up") && feet):
-			feet = false
-			if (jumpRemaining <= 20):
-				velocity.y = 0
-			else:
-				feet = false
-				if (jumpRemaining <= 20):
-					velocity.y = 0
 
 	if Input.is_action_pressed("SlowDown"):
 		if IsBlue:
 			velocity.x /= 2
 		else:
 			velocity = velocity /2
+			
+	if Input.is_action_just_released("Up"):
+		feet = false	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
