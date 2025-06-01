@@ -23,6 +23,7 @@ settings/canvas_textures/default_texture_filter=0
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/stretch/mode="viewport"
 
 [input]
 
