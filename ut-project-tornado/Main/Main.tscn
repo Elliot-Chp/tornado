@@ -7,7 +7,7 @@
 position = Vector2(0, 2)
 
 [node name="Red Soul" parent="." instance=ExtResource("1_lxy7q")]
-position = Vector2(54, -32)
+position = Vector2(2, 0)
 gravity = 20
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -22,3 +22,10 @@ rotation = -1.55509
 [node name="Box3" parent="." instance=ExtResource("2_83ytx")]
 position = Vector2(152, 81)
 rotation = -1.55509
+
+[node name="Box4" parent="." instance=ExtResource("2_83ytx")]
+position = Vector2(152, 81)
+rotation = -1.55509
+
+[node name="Box5" parent="." instance=ExtResource("2_83ytx")]
+position = Vector2(2, 7)
