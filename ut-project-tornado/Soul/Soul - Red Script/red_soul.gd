@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var gravity = 10
 var BlueSoulJump = 300
 
+
 const terminal : float = 650.0
 
 @export var jumpTime = 0.25
@@ -26,11 +27,17 @@ func get_input(delta):
 		velocity.x = BlueSoulDir * SoulSpeed
 		if (Input.is_action_pressed("Up")) and jumpRemaining > 0 and feet:
 			velocity.y = -BlueSoulJump
-			jumpRemaining -= delta
+			jumpRemaining -= delta * 2
 			print(jumpRemaining)
 			
-		if (Input.is_action_just_released("Up")):
+		if (Input.is_action_just_released("Up") && feet):
 			feet = false
+			if (jumpRemaining <= 20):
+				velocity.y = 0
+			else:
+				feet = false
+				if (jumpRemaining <= 20):
+					velocity.y = 0
 
 	if Input.is_action_pressed("SlowDown"):
 		if IsBlue:
@@ -45,13 +52,15 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jumpRemaining = jumpTime
 		feet = true
-	
-	if IsBlue:
-		velocity.y += gravity 
-		if velocity.y > terminal:
-			velocity.y = terminal
+	if !Input.is_action_pressed("Up") || jumpRemaining <= 0:
+		if IsBlue:
+			velocity.y += gravity 
+			if velocity.y > terminal:
+				velocity.y = terminal
 
 	move_and_slide()
+
+	velocity.y -= clampf(BlueSoulJump, 20, 350)
 
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.

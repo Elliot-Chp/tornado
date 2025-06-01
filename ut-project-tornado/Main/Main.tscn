@@ -6,17 +6,17 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Red Soul" parent="." instance=ExtResource("1_lxy7q")]
-position = Vector2(40, 124)
+position = Vector2(54, -32)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Box" parent="." instance=ExtResource("2_83ytx")]
-position = Vector2(-37, 156)
+position = Vector2(-191, 47)
 
 [node name="Box2" parent="." instance=ExtResource("2_83ytx")]
-position = Vector2(-11, 195)
+position = Vector2(-163, 80)
 rotation = -1.55509
 
 [node name="Box3" parent="." instance=ExtResource("2_83ytx")]
-position = Vector2(109, 199)
+position = Vector2(152, 81)
 rotation = -1.55509
