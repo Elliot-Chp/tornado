@@ -1,14 +1,17 @@
 extends Node
 
-var BossHP
+var Bossp = 1300
 
-var BossATK
+var BossAt = 8
 
-var BossDEF
+var BossDf = 5
+
+@export var PlayerStats : Node
 
 # Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-#	pass # Replace with function body.
+func _ready() -> void:
+	#PlayerStats.PlayerDamageOutput = BossAt
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

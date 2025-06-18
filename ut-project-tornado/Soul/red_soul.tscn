@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1aare3i3b4eh"]
+[gd_scene load_steps=7 format=3 uid="uid://b1aare3i3b4eh"]
 
 [ext_resource type="Script" uid="uid://qija6qbcsjlw" path="res://Soul/Soul - Red Script/red_soul.gd" id="1_ycnc0"]
 [ext_resource type="Texture2D" uid="uid://cgt6qail1rf5w" path="res://UNDERTALE Organized Sprite Dump/Battle/UI/Soul/spr_heart_battle_pl_0.png" id="2_au4u0"]
 [ext_resource type="Texture2D" uid="uid://c14vey62851wv" path="res://Soul/spr_heart_battle_pl_0_after im.png" id="3_au4u0"]
+[ext_resource type="Script" uid="uid://cupbwqe0ej12v" path="res://Soul/gpu_particles_2d.gd" id="4_4hhy2"]
+[ext_resource type="PackedScene" uid="uid://rjq5hrgi5v3n" path="res://Settings/Settings.tscn" id="4_nn8sp"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nn8sp"]
 particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
 
-[node name="Red Soul" type="CharacterBody2D"]
+[node name="Red Soul" type="CharacterBody2D" node_paths=PackedStringArray("PlayerStats")]
 script = ExtResource("1_ycnc0")
-IsBlue = true
 gravity = 15
+PlayerStats = NodePath("Settings/EntityStats/Player/PlayerStats")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-2, 8, 2, 8, 2, 6, 4, 6, 4, 4, 6, 4, 6, 2, 8, 2, 8, -6, 7, -6, 7, -7, 6, -7, 6, -8, 4, -8, 4, -7, 2, -7, 2, -6, 1, -6, 1, -4, -1, -4, -1, -6, -2, -6, -2, -7, -4, -7, -4, -8, -6, -8, -6, -7, -7, -7, -7, -6, -8, -6, -8, 2, -6, 2, -6, 4, -4, 4, -4, 6, -2, 6)
@@ -20,18 +22,18 @@ polygon = PackedVector2Array(-2, 8, 2, 8, 2, 6, 4, 6, 4, 4, 6, 4, 6, 2, 8, 2, 8,
 texture = ExtResource("2_au4u0")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite2D"]
+emitting = false
 amount = 10
 texture = ExtResource("3_au4u0")
 lifetime = 0.35
 process_material = SubResource("ParticleProcessMaterial_nn8sp")
+script = ExtResource("4_4hhy2")
 
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
 polygon = PackedVector2Array(-2, 8, 2, 8, 2, 6, 4, 6, 4, 4, 6, 4, 6, 2, 8, 2, 8, -6, 7, -6, 7, -7, 6, -7, 6, -8, 4, -8, 4, -7, 2, -7, 2, -6, 1, -6, 1, -4, -1, -4, -1, -6, -2, -6, -2, -7, -4, -7, -4, -8, -6, -8, -6, -7, -7, -7, -7, -6, -8, -6, -8, 2, -6, 2, -6, 4, -4, 4, -4, 6, -2, 6)
 
-[node name="Timer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 0.017
+[node name="Settings" parent="." instance=ExtResource("4_nn8sp")]
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[editable path="Settings"]

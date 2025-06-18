@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://rjq5hrgi5v3n"]
+
+[ext_resource type="Script" uid="uid://cuyj6glbe7bgv" path="res://Settings/StatScripts/player_stats.gd" id="1_b4apk"]
+[ext_resource type="Script" uid="uid://coechnxqvcj6s" path="res://Settings/StatScripts/boss_monster_stats.gd" id="2_5p68s"]
+[ext_resource type="Script" uid="uid://bnlby6a00cit4" path="res://Settings/StatScripts/trash_orb_stats.gd" id="3_ygfwu"]
+[ext_resource type="Script" uid="uid://dfptfhvc4l4ka" path="res://Settings/wepons_stats.gd" id="4_okdie"]
+[ext_resource type="Script" uid="uid://d1emwds7xwk0x" path="res://Settings/armor_stats.gd" id="5_5p68s"]
+[ext_resource type="Script" uid="uid://btcynr88nugqk" path="res://Settings/item_stats.gd" id="6_ygfwu"]
+
+[node name="Settings" type="Node"]
+
+[node name="EntityStats" type="Node" parent="."]
+
+[node name="Player" type="Node" parent="EntityStats"]
+
+[node name="PlayerStats" type="Node" parent="EntityStats/Player" node_paths=PackedStringArray("WeaponStats", "ArmorStats")]
+script = ExtResource("1_b4apk")
+WeaponStats = NodePath("../../Gear/Weapon/WeponsStats")
+ArmorStats = NodePath("../../Gear/Armor/ArmorStats")
+
+[node name="Monsters" type="Node" parent="EntityStats"]
+
+[node name="BossMonster" type="Node" parent="EntityStats/Monsters"]
+
+[node name="BossMonsterStats" type="Node" parent="EntityStats/Monsters/BossMonster" node_paths=PackedStringArray("PlayerStats")]
+script = ExtResource("2_5p68s")
+PlayerStats = NodePath("../../../Player/PlayerStats")
+
+[node name="TrashOrb" type="Node" parent="EntityStats/Monsters"]
+
+[node name="TrashOrbStats" type="Node" parent="EntityStats/Monsters/TrashOrb" node_paths=PackedStringArray("PlayerStats")]
+script = ExtResource("3_ygfwu")
+PlayerStats = NodePath("../../../Player/PlayerStats")
+
+[node name="Gear" type="Node" parent="EntityStats"]
+
+[node name="Weapon" type="Node" parent="EntityStats/Gear"]
+
+[node name="WeponsStats" type="Node" parent="EntityStats/Gear/Weapon"]
+script = ExtResource("4_okdie")
+
+[node name="Armor" type="Node" parent="EntityStats/Gear"]
+
+[node name="ArmorStats" type="Node" parent="EntityStats/Gear/Armor"]
+script = ExtResource("5_5p68s")
+
+[node name="Items" type="Node" parent="EntityStats"]
+
+[node name="ItemStats" type="Node" parent="EntityStats/Items"]
+script = ExtResource("6_ygfwu")
+
+[node name="GenrealSettings" type="Node" parent="."]

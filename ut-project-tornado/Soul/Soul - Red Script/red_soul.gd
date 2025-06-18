@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-@export var SoulSpeed = 200
+
 @export var IsBlue = false
 @export var IsParry = false
 @export var gravity = 20
 var BlueSoulJump = 250
 
-@export var stats : Node
+@export var PlayerStats : Node
+
+
 
 const terminal : float = 650.0
 
@@ -15,18 +17,17 @@ var jumpRemaining = jumpTime
 var feet = true
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	SoulSpeed = stats.PlayerSoulSpeed
+func _ready() -> void: 
 	pass # Replace with function body.
 
 func get_input(delta):
 	var dir = Input.get_vector("Left", "Right", "Up", "Down")
 	var BlueSoulDir = Input.get_axis("Left", "Right")
 	if IsBlue == false:
-		velocity = dir * SoulSpeed
+		velocity = dir * PlayerStats.PlayerSoulSpeed
 		
 	else: 
-		velocity.x = BlueSoulDir * SoulSpeed
+		velocity.x = BlueSoulDir * PlayerStats.PlayerSoulSpeed
 		if (Input.is_action_pressed("Up")) and jumpRemaining > 0 and feet:
 			velocity.y = -BlueSoulJump
 			jumpRemaining -= delta

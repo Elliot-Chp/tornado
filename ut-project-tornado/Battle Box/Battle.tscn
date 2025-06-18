@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://i76wlkxy6v6g"]
+
+[ext_resource type="PackedScene" uid="uid://b1aare3i3b4eh" path="res://Soul/red_soul.tscn" id="1_muobu"]
+[ext_resource type="PackedScene" uid="uid://dfo4nur5t2iyv" path="res://Battle Box/Box_2d.tscn" id="2_bkxwp"]
+[ext_resource type="Texture2D" uid="uid://qyfbooh4dqwe" path="res://Battle Box/Battleboxvineyshort.png" id="3_veedv"]
+[ext_resource type="Texture2D" uid="uid://0h35qviku11b" path="res://UNDERTALE Organized Sprite Dump/Battle/UI/Buttons/spr_actbt_center_0.png" id="4_suufa"]
+[ext_resource type="Texture2D" uid="uid://8a5dxrv33qki" path="res://UNDERTALE Organized Sprite Dump/Battle/UI/spr_hpname_0.png" id="5_veedv"]
+[ext_resource type="Texture2D" uid="uid://cq8m6px7yloc5" path="res://UNDERTALE Organized Sprite Dump/Battle/UI/spr_krmeter_0.png" id="6_006xb"]
+[ext_resource type="Texture2D" uid="uid://v4hur3618htr" path="res://UNDERTALE Organized Sprite Dump/Battle/UI/BG/spr_battlebg_1.png" id="7_veedv"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="Red Soul" parent="." instance=ExtResource("1_muobu")]
+position = Vector2(2, 0)
+gravity = 20
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Box5" parent="." instance=ExtResource("2_bkxwp")]
+position = Vector2(-68, 142)
+
+[node name="Box" parent="Box5" index="0"]
+position = Vector2(76.5, 7.5)
+scale = Vector2(43.8, 2.6)
+
+[node name="CollisionPolygon2D" parent="Box5/StaticBody2D" index="0"]
+position = Vector2(717.8, 294.371)
+polygon = PackedVector2Array(-9, 4.23529, -9, 3.00512, -9, -3, -6.92727, 23.1529, -5.94848, -3, -5.69091, 0, -5, -3, -5, 4.23529)
+
+[node name="Battleboxbasicborder" type="Sprite2D" parent="."]
+position = Vector2(0, 36)
+texture = ExtResource("3_veedv")
+
+[node name="SprActbtCenter0" type="Sprite2D" parent="."]
+position = Vector2(-250, 150)
+texture = ExtResource("4_suufa")
+
+[node name="SprActbtCenter1" type="Sprite2D" parent="."]
+position = Vector2(240, 150)
+texture = ExtResource("4_suufa")
+
+[node name="SprActbtCenter2" type="Sprite2D" parent="."]
+position = Vector2(120, 200)
+texture = ExtResource("4_suufa")
+
+[node name="SprActbtCenter3" type="Sprite2D" parent="."]
+position = Vector2(-120, 200)
+texture = ExtResource("4_suufa")
+
+[node name="SprHpname0" type="Sprite2D" parent="."]
+position = Vector2(-129, 152)
+texture = ExtResource("5_veedv")
+
+[node name="SprKrmeter0" type="Sprite2D" parent="."]
+position = Vector2(74, 305)
+texture = ExtResource("6_006xb")
+
+[node name="SprBattlebg1" type="Sprite2D" parent="."]
+position = Vector2(-7, -10)
+texture = ExtResource("7_veedv")
+
+[editable path="Box5"]

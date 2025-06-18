@@ -1,37 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx01m85sbcav4"]
+[gd_scene load_steps=3 format=3 uid="uid://dx01m85sbcav4"]
 
-[ext_resource type="PackedScene" uid="uid://b1aare3i3b4eh" path="res://Soul/red_soul.tscn" id="1_lxy7q"]
-[ext_resource type="PackedScene" uid="uid://dfo4nur5t2iyv" path="res://Battle Box/Box_2d.tscn" id="2_83ytx"]
-[ext_resource type="PackedScene" uid="uid://rjq5hrgi5v3n" path="res://entity_stats.tscn" id="3_amygn"]
+[ext_resource type="PackedScene" uid="uid://i76wlkxy6v6g" path="res://Battle Box/Battle.tscn" id="1_83ytx"]
+[ext_resource type="PackedScene" uid="uid://rjq5hrgi5v3n" path="res://Settings/Settings.tscn" id="3_amygn"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node"]
+
+[node name="Battle" parent="." instance=ExtResource("1_83ytx")]
 position = Vector2(0, 2)
 
-[node name="Red Soul" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("1_lxy7q")]
-position = Vector2(2, 0)
-gravity = 20
-stats = NodePath("../EntityStats/Player/Player Stats")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Box" parent="." instance=ExtResource("2_83ytx")]
-position = Vector2(-191, 47)
-
-[node name="Box2" parent="." instance=ExtResource("2_83ytx")]
-position = Vector2(-163, 80)
-rotation = -1.55509
-
-[node name="Box3" parent="." instance=ExtResource("2_83ytx")]
-position = Vector2(152, 81)
-rotation = -1.55509
-
-[node name="Box4" parent="." instance=ExtResource("2_83ytx")]
-position = Vector2(152, 81)
-rotation = -1.55509
-
-[node name="Box5" parent="." instance=ExtResource("2_83ytx")]
-position = Vector2(2, 7)
-
-[node name="EntityStats" parent="." instance=ExtResource("3_amygn")]
-
-[editable path="EntityStats"]
+[node name="Settings" parent="." instance=ExtResource("3_amygn")]
