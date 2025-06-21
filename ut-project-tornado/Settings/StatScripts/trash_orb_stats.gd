@@ -2,11 +2,13 @@ extends Node
 
 var OrbHP = 230
 
-var OrbAT = 1000
+var OrbAT = 8
 
 var OrbDF = 2
 
 @export var PlayerStats : Node
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

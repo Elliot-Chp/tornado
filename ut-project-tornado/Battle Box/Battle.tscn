@@ -11,7 +11,7 @@
 [node name="Battle" type="Node2D"]
 
 [node name="Red Soul" parent="." instance=ExtResource("1_muobu")]
-position = Vector2(2, 0)
+position = Vector2(0, 23)
 gravity = 20
 
 [node name="Camera2D" type="Camera2D" parent="."]

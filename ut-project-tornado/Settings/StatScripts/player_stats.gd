@@ -24,10 +24,10 @@ var PlayerArDf = 10
 
 var SoulSpeed
 
-@onready var PlayerDamageOutput = 8
+var PlayerDamageOutput 
 
 
-var PlayerDamageTaken
+var PlayerDamageTaken = clampi((PlayerDamageOutput - (PlayerDf + PlayerArDf) /5), 1, 999)
 
 
 
@@ -54,22 +54,21 @@ func PlayerAtStats():
 	
 	
 func TakingDamage():
-	PlayerDamageTaken = clampi((PlayerDamageOutput - (PlayerDf + PlayerArDf) /5), 1, 999)
-	PlayerHp -= PlayerDamageTaken
 	print(PlayerHp)
+	PlayerHp -= PlayerDamageTaken
 	print(PlayerDamageTaken)
 	print(PlayerHp)
-	pass # Replace with function body.
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PlayerHpStats()
-	TakingDamage()
+	
 	#remove later testing code
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	TakingDamage()
 	pass
