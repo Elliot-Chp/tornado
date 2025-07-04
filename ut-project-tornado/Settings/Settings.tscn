@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cuyj6glbe7bgv" path="res://Settings/StatScripts/player_stats.gd" id="1_b4apk"]
 [ext_resource type="Script" uid="uid://coechnxqvcj6s" path="res://Settings/StatScripts/boss_monster_stats.gd" id="2_5p68s"]
 [ext_resource type="Script" uid="uid://bnlby6a00cit4" path="res://Settings/StatScripts/trash_orb_stats.gd" id="3_ygfwu"]
-[ext_resource type="Script" uid="uid://dfptfhvc4l4ka" path="res://Settings/wepons_stats.gd" id="4_okdie"]
-[ext_resource type="Script" uid="uid://d1emwds7xwk0x" path="res://Settings/armor_stats.gd" id="5_5p68s"]
-[ext_resource type="Script" uid="uid://btcynr88nugqk" path="res://Settings/item_stats.gd" id="6_ygfwu"]
+[ext_resource type="Script" uid="uid://dfptfhvc4l4ka" path="res://Settings/StatScripts/wepons_stats.gd" id="4_okdie"]
+[ext_resource type="Script" uid="uid://d1emwds7xwk0x" path="res://Settings/StatScripts/armor_stats.gd" id="5_5p68s"]
+[ext_resource type="Script" uid="uid://btcynr88nugqk" path="res://Settings/StatScripts/item_stats.gd" id="6_ygfwu"]
 
 [node name="Settings" type="Node"]
 
@@ -13,10 +13,8 @@
 
 [node name="Player" type="Node" parent="EntityStats"]
 
-[node name="PlayerStats" type="Node" parent="EntityStats/Player" node_paths=PackedStringArray("WeaponStats", "ArmorStats")]
+[node name="PlayerStats" type="Node" parent="EntityStats/Player"]
 script = ExtResource("1_b4apk")
-WeaponStats = NodePath("../../Gear/Weapon/WeponsStats")
-ArmorStats = NodePath("../../Gear/Armor/ArmorStats")
 
 [node name="Monsters" type="Node" parent="EntityStats"]
 

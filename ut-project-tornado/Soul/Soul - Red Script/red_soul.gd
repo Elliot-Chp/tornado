@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var IsBlue = false
 @export var IsParry = false
 @export var gravity = 20
-var BlueSoulJump = 250
+var BlueSoulJump = 250.50
 
 @export var PlayerStats : Node
 

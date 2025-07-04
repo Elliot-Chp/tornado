@@ -15,6 +15,15 @@ run/main_scene="uid://dx01m85sbcav4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ArmorStats="*res://Settings/StatScripts/armor_stats.gd"
+ItemStats="*res://Settings/StatScripts/item_stats.gd"
+WeponsStats="*res://Settings/StatScripts/wepons_stats.gd"
+BossMonsterStats="*res://Settings/StatScripts/boss_monster_stats.gd"
+PlayerStats="*res://Settings/StatScripts/player_stats.gd"
+TrashOrbStats="*res://Settings/StatScripts/trash_orb_stats.gd"
+
 [debug]
 
 settings/canvas_textures/default_texture_filter=0
@@ -24,6 +33,10 @@ settings/canvas_textures/default_texture_filter=0
 window/size/viewport_width=640
 window/size/viewport_height=480
 window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="UT project tornado"
 
 [input]
 

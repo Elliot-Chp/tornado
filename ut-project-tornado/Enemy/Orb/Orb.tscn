@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cltgkp276l6ng"]
+
+[ext_resource type="PackedScene" uid="uid://cuoc5ja4eqqtl" path="res://Enemy/Orb/Orb Bullet/BulletTest.tscn" id="1_721h0"]
+
+[node name="Orb" type="Node2D"]
+
+[node name="BulletTest" parent="." instance=ExtResource("1_721h0")]
+
+[editable path="BulletTest"]

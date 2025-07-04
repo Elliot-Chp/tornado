@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuoc5ja4eqqtl"]
+
+[ext_resource type="Texture2D" uid="uid://bia2vra5nbj6j" path="res://UNDERTALE Organized Sprite Dump/Battle/Enemies/01 - Ruins/Froggit/spr_flybullet_1.png" id="1_4r1d7"]
+[ext_resource type="Script" uid="uid://dqfcuap7bv5og" path="res://Enemy/Orb/Orb Bullet/bullet_hitbox.gd" id="1_fj6q0"]
+
+[node name="BulletTest" type="Node2D"]
+
+[node name="BulletHitbox" type="Area2D" parent="."]
+script = ExtResource("1_fj6q0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BulletHitbox"]
+polygon = PackedVector2Array(-2, -3, -2, -4, 0, -4, 0, -5, 4, -5, 4, -4, 6, -4, 6, -3, 4, -3, 4, -1, 0, -1, 0, -3)
+
+[node name="SprFlybullet1" type="Sprite2D" parent="."]
+position = Vector2(2, -3)
+texture = ExtResource("1_4r1d7")
